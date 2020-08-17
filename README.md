@@ -28,7 +28,7 @@ Installing the app will bring you back to the "Oauth & Permissions" page. You wi
 
 For the workspace you want to have two channels. One public and one private channel. Add your bot to both channels.
 
-   ![add bot](/images/addBot.mp4)
+<a href="https://www.loom.com/share/d7a449dcc4374ff6b614e6694e76de52"> <p>Add Bot To A Channel</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d7a449dcc4374ff6b614e6694e76de52-with-play.gif"> </a>
 
 The public channel will scanned by the bot and will be looking for messages without an heart emoji (you can change the emoji you whatever you want.) If a message doesn't have a heart emoji that means it hasn't been look at by the admin team.
 
@@ -43,7 +43,7 @@ For the script you need to make sure you but the id's of your public and private
 
 It up to you to choose how to want to the script to run. You can run it manualy from your computer, on a in house server, or on a virtual cloud instance like AWS EC2. Please see the video below of an sample of how the app will work.
 
-![App In Action](/images/appInAction.mp4)
+<a href="https://www.loom.com/share/50cb8715e47e4845bc9d3b0021de110b"> <p>Add Bot To A Channel</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/50cb8715e47e4845bc9d3b0021de110b-with-play.gif"> </a>
 
 
 
