@@ -1,9 +1,6 @@
 import os
-import logging
 from slack import WebClient
 from slack.errors import SlackApiError
-
-#setting up error logging
 
 def main():
     #Set XOXP app token as environmentable variable
@@ -14,8 +11,8 @@ def main():
     #conversations.list method on your Slack workspace. Make sure your bot
     # a member of the channels you want to receive the ids from
  
-    public_Triage = 'C018PPTV8VC'
-    private_Triage = 'G018FQ033PZ'
+    public_Triage = 'C018PPTV8VC'  #enter id of public Triage channel
+    private_Triage = 'G018FQ033PZ' #enter id of private Triage channel
 
     def message_search():
         '''search through channel message and select
@@ -37,11 +34,14 @@ def main():
                     '''Test to see if message has a emoji reaction'''
                     if messages.get('reactions',0) != 0:
 
+                        '''if the message has an emoji reaction add them to
+                        the emoji_List list'''
                         for emoji in messages['reactions']:
                             emoji_List.append(emoji['name'])
                         '''If we dont find the heart emoji the message
                         hasn't been looked at and the team needs to be
-                        aware'''
+                        aware. If you want to use a different emoji change
+                        the name below'''
                         if 'heart' not in emoji_List:
                             mess_ID.append(messages['ts'])
                     else:
@@ -51,7 +51,7 @@ def main():
                 '''checking to see if there is more messages to search through'''
                 if hist_Triage_Channel['has_more']:
                     '''if true  receive next set of channel messages'''
-                    hist_Triage_Channel = client.conversations_history(channel=public_Triage1,cursor=\
+                    hist_Triage_Channel = client.conversations_history(channel=public_Triage,cursor=\
                                                                 hist_Triage_Channel['response_metadata']\
                                                                 ['next_cursor'])
                 else:
@@ -65,7 +65,7 @@ def main():
         return mess_ID
 
     def results(message_ts_list):
-        '''Take the results of messages serach function and
+        '''Take the results of messages search function and
         post messages in private triage channel of items that 
         still need to be addressed'''
 
@@ -84,7 +84,7 @@ def main():
             triage_message = triage_message = [{"type": "section","text":{"type": "mrkdwn","text": \
                                             f'{ mkdm_msg_header } \n {mkdm_message}'}}]
         
-            client.chat_postMessage(channel=private_Triage,blocks=triage_message)
+            client.chat_postMessage(channel=private_Triage,blocks=triage_message,username='Bot')
         except Exception as e:
             print(e)
 
