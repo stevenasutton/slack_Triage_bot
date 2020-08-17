@@ -11,14 +11,14 @@ The next step in using this code in your Slack environment is to first create a 
 
 Next step is to click on "OAuth & Permissions" and scroll down to the  "Scopes" section. The following "Bot Token Scopes" are need for the app to run properly:
 
-[List Scopes](/images/bot_Scopes.PNG)
+![List Scopes](/images/bot_Scopes.PNG)
 
 
  Your app will only be able to use the capablities you give it.(like it super power :superhero_man:). For a list of all the possible Slack app ablities please go [here](https://api.slack.com/scopes)
 
  Now scroll up to the top of the current page and click the "Install App to Workspace" button. You see a screen similiar to the one below. Just click the "allow" button.
 
- [Confirmation Page](/images/bot_InstallationConfirmScreen.PNG)
+ ![Confirmation Page](/images/bot_InstallationConfirmScreen.PNG)
 
 Installing the app will bring you back to the "Oauth & Permissions" page. You will be presented with a token for your workspace. That token will become the data for the environmental variable "SLACK_TOKEN" in the triagebot.py script.
 
@@ -28,7 +28,7 @@ Installing the app will bring you back to the "Oauth & Permissions" page. You wi
 
 For the workspace you want to have two channels. One public and one private channel. Add your bot to both channels.
 
-   [add bot](/images/addBot.mp4)
+   ![add bot](/images/addBot.mp4)
 
 The public channel will scanned by the bot and will be looking for messages without an heart emoji (you can change the emoji you whatever you want.) If a message doesn't have a heart emoji that means it hasn't been look at by the admin team.
 
@@ -43,7 +43,7 @@ For the script you need to make sure you but the id's of your public and private
 
 It up to you to choose how to want to the script to run. You can run it manualy from your computer, on a in house server, or on a virtual cloud instance like AWS EC2. Please see the video below of an sample of how the app will work.
 
-[App In Action](/images/appInAction.mp4)
+![App In Action](/images/appInAction.mp4)
 
 
 
